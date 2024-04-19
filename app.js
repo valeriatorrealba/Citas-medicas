@@ -21,7 +21,7 @@ app.get("/consulta", (req, res) => {
         .get("https://randomuser.me/api/?results=5")
         .then((data) => {
             const uuid = uuidv4();
-            const codigo = uuid.substr(0, 6);
+            const codigo = uuid.slice(0, 6);
             const usuario = data.data.results;
             let contador = 1;
             const usuariosNuevos = usuario.map(usuario => ({
